@@ -3,6 +3,11 @@
 #include <vector>
 
 //getNext
+//k=next[j];p[j+1]!=s[i+1]
+//         k+1;                                       (p[k]=p[j])
+//next[i]= 
+//         next[k]+1(and p[next[k]=p[j]])             (p[k]!=p[j]) 
+
 bool getNext(int *next,std::string subStr){
 	if(subStr.size()<=0){
 		std::cout<<"The subStr is empty: ";
