@@ -55,6 +55,27 @@ bool ogetNext(int *next,std::string subStr){
 
 }
 
+bool next(int *next,std::string substr) {
+
+	next[0]=-1;
+	int i=0,j=-1;
+	while(i<substr.size()) {
+		while(j>=0&&substr[i]!=substr[j]) {
+			j=next[j];
+		}
+		++i;
+		++j;
+		if(i==substr.size()){
+			break;
+		}
+		if (substr[i]==substr[j]){//”≈ªØ
+			next[i]=next[j];
+		}
+		else {
+			next[i]=j;
+		}
+	}
+}
 //getPosition
 bool getPosition(int *next,std::string mStr,std::string subStr,std::string::size_type &pos)
 {
